@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="filled"
+            type="Boolean" />
+
+        <variable
+            name="position"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="10dp"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="6dp"
+            android:background="@{filled ? @android:color/white : @color/regent_gray }"
+            app:layout_constraintEnd_toEndOf="@id/positionTxt"
+            app:layout_constraintStart_toStartOf="@+id/positionTxt"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/black" />
+
+        <TextView
+            android:id="@+id/positionTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{position}"
+            android:textColor="@{filled ? @android:color/white : @color/regent_gray }"
+            android:textSize="12sp"
+            tools:text="1"
+            android:maxLines="1"
+            android:maxLength="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:textColor="@color/black" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="6dp"
+            android:background="@{filled ? @android:color/white : @color/regent_gray }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/positionTxt"
+            app:layout_constraintStart_toStartOf="@+id/positionTxt"
+            tools:background="@color/black" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
